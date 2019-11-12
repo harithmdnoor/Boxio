@@ -37,20 +37,31 @@ db.collection('Students').get().then(snapshot => {
         renderStudents(doc);
     });
 });
+*/
 
 // saving data
-form.addEventListener('submit', (e) => {
-    //e.preventDefault();
-    db.collection('Students').add({
+form.addEventListener('click', (e) => {
+    e.preventDefault();
+    if(document.getElementsByClassName('button1'))
+{
+    db.collection('Students').add(    
+    {
         StudentName: 'Tommy',
         StudentID: '10175719',
-        Answer: 'Yes'
+        Answer: form.ROne.value
     })
-    form.StudentName.value = '',
-    form.StudentID.value = '',
-    form.Answer.value = ''
+}
+    else if (document.getElementsByClassName('button2'))
+    {
+        db.collection('Students').add(    
+            {
+                StudentName: 'Tommy',
+                StudentID: '10175719',
+                Answer: form.RTwo.value
+            })        
+    }
 })
-*/
+
 
 // Real-time listener
 db.collection('Students').onSnapshot(snapshot => {
