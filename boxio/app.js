@@ -38,17 +38,28 @@ db.collection('Students').get().then(snapshot => {
     });
 });
 */
+
 // saving data
 form.addEventListener('click', (e) => {
     e.preventDefault();
-    db.collection('Students').add({
+    if(document.getElementsByClassName('button1'))
+{
+    db.collection('Students').add(    
+    {
         StudentName: 'Tommy',
-        StudentID: 10175719,
-        Answer: "Yes"
+        StudentID: '10175719',
+        Answer: form.ROne.value
     })
-    //form.StudentName.value = '',
-    //form.StudentID.value = '',
-    //form.Answer.value = ''
+}
+    else if (document.getElementsByClassName('button2'))
+    {
+        db.collection('Students').add(    
+            {
+                StudentName: 'Tommy',
+                StudentID: '10175719',
+                Answer: form.RTwo.value
+            })        
+    }
 })
 
 
