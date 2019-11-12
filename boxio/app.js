@@ -37,20 +37,20 @@ db.collection('Students').get().then(snapshot => {
         renderStudents(doc);
     });
 });
-
+*/
 // saving data
-form.addEventListener('submit', (e) => {
-    //e.preventDefault();
+form.addEventListener('click', (e) => {
+    e.preventDefault();
     db.collection('Students').add({
         StudentName: 'Tommy',
-        StudentID: '10175719',
-        Answer: 'Yes'
+        StudentID: 10175719,
+        Answer: "Yes"
     })
-    form.StudentName.value = '',
-    form.StudentID.value = '',
-    form.Answer.value = ''
+    //form.StudentName.value = '',
+    //form.StudentID.value = '',
+    //form.Answer.value = ''
 })
-*/
+
 
 // Real-time listener
 db.collection('Students').onSnapshot(snapshot => {
