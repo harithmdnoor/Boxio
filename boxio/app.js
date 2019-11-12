@@ -1,0 +1,66 @@
+const studentList = document.querySelector('#student-list');
+const form = document.querySelector('#add-response');
+
+// create element & render
+function renderStudents(doc){
+    let li = document.createElement('li');
+    let id = document.createElement('span');
+    let name = document.createElement('span');
+    let answer = document.createElement('span');
+    let cross = document.createElement('div');
+
+    li.setAttribute('data-id', doc.id);
+    id.textContent = doc.data().StudentID;
+    name.textContent = doc.data().StudentName;
+    answer.textContent = doc.data().Answer;
+    cross.textContent = 'x';
+
+    li.appendChild(id);
+    li.appendChild(name);
+    li.appendChild(answer);
+    li.appendChild(cross);
+
+    studentList.appendChild(li);
+
+    // delete data
+    cross.addEventListener('click', (e) => {
+        e.stopPropagation();
+        let id = e.target.parentElement.getAttribute('data-id');
+        db.collection('Students').doc(id).delete();
+    })
+}
+
+/*
+// getting data
+db.collection('Students').get().then(snapshot => {
+    snapshot.docs.forEach(doc => {
+        renderStudents(doc);
+    });
+});
+
+// saving data
+form.addEventListener('submit', (e) => {
+    //e.preventDefault();
+    db.collection('Students').add({
+        StudentName: 'Tommy',
+        StudentID: '10175719',
+        Answer: 'Yes'
+    })
+    form.StudentName.value = '',
+    form.StudentID.value = '',
+    form.Answer.value = ''
+})
+*/
+
+// Real-time listener
+db.collection('Students').onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+      if(change.type == 'added'){
+        renderStudents(change.doc);
+    } else if (change.type == 'removed') {
+        let li = studentList.querySelector('[data-id=' + change.doc.id + ']');
+        studentList.removeChild(li);
+    }
+    })
+})
