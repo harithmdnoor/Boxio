@@ -121,3 +121,29 @@ li div{
     box-shadow: 0 2px #666;
     transform: translateY(4px);
 }
+
+.enterbtn{
+    display: inline-flex;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #33B3FF;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px #999;
+}
+
+.subname {
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+}
+.subpass {
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+}
