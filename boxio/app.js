@@ -5,7 +5,7 @@ const button2 = document.querySelector('.button2')
 const button3 = document.querySelector('.button3')
 
 // create element & render
-function renderStudents(doc){
+function renderResponse(doc){
     let li = document.createElement('li');
     let id = document.createElement('span');
     let name = document.createElement('span');
@@ -29,7 +29,7 @@ function renderStudents(doc){
     cross.addEventListener('click', (e) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
-        db.collection('Students').doc(id).delete();
+        db.collection('Response').doc(id).delete();
     })
 }
 
@@ -47,37 +47,37 @@ form.addEventListener('click', (e) => {
     e.preventDefault();
     if (event.target == button1)
     {
-        db.collection('Students').add(    
+        db.collection('Response').add(    
             {
-                StudentName: 'Tommy',
-                StudentID: '10175719',
+                StudentName: studentname,
+                StudentID: studentid,
                 Answer: form.ROne.value
             })        
     }
     else if (event.target == button2) {
-        db.collection('Students').add(    
+        db.collection('Response').add(    
             {
-                StudentName: 'Tommy',
-                StudentID: '10175719',
+                StudentName: studentname,
+                StudentID: studentid,
                 Answer: form.RTwo.value
             })
     }
     else if (event.target == button3) {
-        db.collection('Students').add(    
+        db.collection('Response').add(    
             {
-                StudentName: 'Tommy',
-                StudentID: '10175719',
+                StudentName: studentname,
+                StudentID: studentid,
                 Answer: form.RThree.value
             })        
     }
   }) 
 
 // Real-time listener (Getting real-time data)
-db.collection('Students').onSnapshot(snapshot => {
+db.collection('Response').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
       if(change.type == 'added'){
-        renderStudents(change.doc);
+        renderResponse(change.doc);
     } else if (change.type == 'removed') {
         let li = studentList.querySelector('[data-id=' + change.doc.id + ']');
         studentList.removeChild(li);

@@ -39,6 +39,14 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
+        //update student name and id
+        var studentdata = localStorage['studentdata'];
+        localStorage.removeItem('studentdata');
+        var studentname = '';
+        var studentid = '';
+        studentarray = studentdata.split(',');
+        studentname = studentarray[0];
+        studentid = studentarray[1];
     </script>
     <script src="app.js"></script>
 </body>
