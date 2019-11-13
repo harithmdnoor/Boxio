@@ -42,21 +42,20 @@ db.collection('Students').get().then(snapshot => {
 // saving data
 form.addEventListener('click', (e) => {
     e.preventDefault();
-    if(document.getElementsByClassName('button1'))
-{
+    if(document.getElementsByClassName('button1')){
     db.collection('Students').add(    
     {
         StudentName: 'Tommy',
         StudentID: '10175719',
         Answer: form.ROne.value
-    })
-}
-    else if (document.getElementsByClassName('button2'))
+        })
+    }
+    if (document.getElementsByClassName('button2'))
     {
         db.collection('Students').add(    
             {
                 StudentName: 'Tommy',
-                StudentID: '10175719',
+                StudentID: 'LANJIAO',
                 Answer: form.RTwo.value
             })        
     }
