@@ -1,5 +1,8 @@
 const studentList = document.querySelector('#student-list');
 const form = document.querySelector('#add-response');
+const button1 = document.querySelector('.button1')
+const button2 = document.querySelector('.button2')
+const button3 = document.querySelector('.button3')
 
 // create element & render
 function renderStudents(doc){
@@ -22,7 +25,7 @@ function renderStudents(doc){
 
     studentList.appendChild(li);
 
-    // delete data
+// delete data
     cross.addEventListener('click', (e) => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute('data-id');
@@ -42,27 +45,34 @@ db.collection('Students').get().then(snapshot => {
 // saving data
 form.addEventListener('click', (e) => {
     e.preventDefault();
-    if(document.getElementsByClassName('button1')){
-    db.collection('Students').add(    
-    {
-        StudentName: 'Tommy',
-        StudentID: '10175719',
-        Answer: form.ROne.value
-        })
-    }
-    if (document.getElementsByClassName('button2'))
+    if (event.target == button1)
     {
         db.collection('Students').add(    
             {
                 StudentName: 'Tommy',
-                StudentID: 'LANJIAO',
-                Answer: form.RTwo.value
+                StudentID: '10175719',
+                Answer: form.ROne.value
             })        
     }
-})
+    else if (event.target == button2) {
+        db.collection('Students').add(    
+            {
+                StudentName: 'Tommy',
+                StudentID: '10175719',
+                Answer: form.RTwo.value
+            })
+    }
+    else if (event.target == button3) {
+        db.collection('Students').add(    
+            {
+                StudentName: 'Tommy',
+                StudentID: '10175719',
+                Answer: form.RThree.value
+            })        
+    }
+  }) 
 
-
-// Real-time listener
+// Real-time listener (Getting real-time data)
 db.collection('Students').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
