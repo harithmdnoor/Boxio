@@ -80,3 +80,28 @@ dbl.collection('Teacher').get().then(snapshot => {
         teacherpasslist.push(teacherpass);
     })
 });
+
+// Get the input field
+var nameinput = document.getElementById("name");
+var passinput = document.getElementById("pass");
+
+// Execute a function when the user releases a key on the keyboard
+nameinput.addEventListener("keyup", function (event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("loginbtn").click();
+    }
+});
+// Execute a function when the user releases a key on the keyboard
+passinput.addEventListener("keyup", function (event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("loginbtn").click();
+    }
+});
