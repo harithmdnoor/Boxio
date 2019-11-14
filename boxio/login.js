@@ -26,7 +26,7 @@ function verify() {
             teacherpasslist.forEach(ids => {
                 console.log(ids);
                 if (pas == ids) {
-                    window.location.href = 'index.html';
+                    window.location.href = 'teacher.html';
                     var teacherdata = [nem, ids];
                     localStorage.setItem('teacherdata', teacherdata);
                     check = true;
@@ -35,7 +35,7 @@ function verify() {
         }
     })
     if (check == false) {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     }
     /*
     if ((nem == 'Teacher') && (pas == 'pass1234')) {
