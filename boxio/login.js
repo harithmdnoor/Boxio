@@ -8,6 +8,7 @@ var check = false;
 function verify() {
     var nem = document.getElementById('name').value;
     var pas = document.getElementById('pass').value;
+    console.log(studentidlist);
     studentnamelist.forEach(doc => {
         if (nem == doc) {
             studentidlist.forEach(ids => {
