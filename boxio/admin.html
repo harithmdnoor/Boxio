@@ -16,20 +16,15 @@
 
     <div class="content">
 
-        <h3>Add Teacher</h3>
-        <form name="teacherForm" action="/app.js" onsubmit="return validateForm()" method="post">
-            Name: &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="teacherName"> <br />
-            ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input type="text" name="teacherId">
-            <input type="submit" value="Submit">
-        </form>
-        <h3>Add Student</h3>
-        <form name="studentForm" action="/app.js" onsubmit="return validateForm()" method="post">
-            Name: &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="teacherName"> <br />
-            ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input type="text" name="teacherId">
-            <input type="submit" value="Submit">
-        </form>
+        <div class="dropdown">
+            <button onclick="dropDown()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
     </div>
-
     <script>
         // Web app's Firebase configuration
         var firebaseConfig = {
@@ -47,6 +42,7 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
         //update student name and id
+        /*
         var studentdata = localStorage['studentdata'];
         localStorage.removeItem('studentdata');
         var studentname = '';
@@ -54,6 +50,7 @@
         studentarray = studentdata.split(',');
         studentname = studentarray[0];
         studentid = studentarray[1];
+    */
     </script>
     <script src="app.js"></script>
 </body>
