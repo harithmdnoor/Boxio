@@ -3,24 +3,7 @@ const form = document.querySelector('#add-response');
 const button1 = document.querySelector('.button1')
 const button2 = document.querySelector('.button2')
 const button3 = document.querySelector('.button3')
-toggle between hiding and showing the dropdown content * /
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function (event) {
-    if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-}
 // create element & render
 function renderResponse(doc){
     let li = document.createElement('li');
@@ -101,3 +84,21 @@ db.collection('Response').onSnapshot(snapshot => {
     }
     })
 })
+
+function dropDown() {
+    document.getElementById('myDropdown').classList.toggle('show');
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName('dropdown-content');
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+}
