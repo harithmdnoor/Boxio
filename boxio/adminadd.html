@@ -12,19 +12,25 @@
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
 </head>
 <body>
-    <h1>Admin Page</h1>
+    <h1>Admin Add Page</h1>
 
     <div class="content">
 
-        <div class="dropdown">
-            <button onclick="dropDown()" class="dropbtn">Dropdown</button>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
-        </div>
+        <h3>Add Teacher</h3>
+        <form name="teacherForm" action="/app.js" onsubmit="return validateForm()" method="post">
+            Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="teacherName"> <br />
+            Password:&nbsp;&nbsp;<input type="text" id="teacherPass"> <br />
+            <button id="teacherbtn" type="button" class="enterbtn" onclick="addteacher()">Submit</button>
+        </form>
+        <h3>Add Student</h3>
+        <form name="studentForm" action="/app.js" onsubmit="return validateForm()" method="post">
+            Name: &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="studentName"> <br />
+            ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input type="number" id="studentID" pattern=".{8}"> <br />
+            <button id="studentbtn" type="button" class="enterbtn" onclick="addstudent()">Submit</button>
+        </form>
+        
     </div>
+    
     <script>
         // Web app's Firebase configuration
         var firebaseConfig = {
@@ -41,17 +47,8 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
-        //update student name and id
-        /*
-        var studentdata = localStorage['studentdata'];
-        localStorage.removeItem('studentdata');
-        var studentname = '';
-        var studentid = '';
-        studentarray = studentdata.split(',');
-        studentname = studentarray[0];
-        studentid = studentarray[1];
-    */
+
     </script>
-    <script src="app.js"></script>
+    <script src="add.js"></script>
 </body>
 </html>

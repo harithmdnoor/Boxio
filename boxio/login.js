@@ -106,3 +106,8 @@ passinput.addEventListener("keyup", function (event) {
         document.getElementById("loginbtn").click();
     }
 });
+
+
+function admin() {
+    window.location.href = 'adminmenu.html';
+}

@@ -5,25 +5,22 @@
     <meta charset="utf-8" />
     <meta name="author" content="Boxio" />
     <meta name="description" content="blank" />
-    <title>Login Screen</title>
+    <title>Student</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <form class="loginform">
-        <fieldset class="loginfield">
-            <a class="subname">Username:</a> <input type="text" name="username" id="name" /><br />
-            <a class="subpass">Password:</a> <input type="password" name="password" id="pass" /><br />
-            <br />
-            <button id="loginbtn" type="button" class="enterbtn" onclick="verify()">Submit</button>
-            <button class="enterbtn" type="reset">Reset</button>
-        </fieldset>
-    </form>
-    <p></p>
-    <button id="btn" type="button" class="btn" onclick="admin()">Admin</button>
+    <h1>Admin Menu Page</h1>
+
+    <div class="content">
+        <button id="addbtn" type="button" class="addbtn" onclick="addperson()">Add Student/Teacher</button>
+        <button id="deletestudentbtn" type="button" class="deletestudentbtn" onclick="deletestudent()">Remove Student Account</button>
+        <button id="deleteteacherbtn" type="button" class="deleteteacherbtn" onclick="deleteteacher()">Remove Teacher Account</button>
+        <button id="btn" type="button" class="btn" onclick="backlogin()">Login</button>
+    </div>
+
     <script>
         // Web app's Firebase configuration
         var firebaseConfig = {
@@ -39,8 +36,9 @@
 
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        const dbl = firebase.firestore();
+        const db = firebase.firestore();
+
     </script>
-    <script src="login.js"></script>
+    <script src="add.js"></script>
 </body>
 </html>

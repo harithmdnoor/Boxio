@@ -85,6 +85,7 @@ db.collection('Response').onSnapshot(snapshot => {
     })
 })
 
+/*
 function dropDown() {
     document.getElementById('myDropdown').classList.toggle('show');
 }
@@ -102,3 +103,4 @@ window.onclick = function (event) {
         }
     }
 }
+*/
