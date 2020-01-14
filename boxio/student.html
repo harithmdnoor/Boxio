@@ -5,23 +5,24 @@
     <meta charset="utf-8" />
     <meta name="author" content="Boxio" />
     <meta name="description" content="blank" />
-    <title>Login Screen</title>
+    <title>Student</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <form class="loginform">
-        <fieldset class="loginfield">
-            <a class="subname">Username:</a> <input type="text" name="username" id="name" /><br />
-            <a class="subpass">Password:</a> <input type="password" name="password" id="pass" /><br />
-            <br />
-            <button id="loginbtn" type="button" class="enterbtn" onclick="verify()">Submit</button>
-            <button class="enterbtn" type="reset">Reset</button>
-        </fieldset>
-    </form>
+    <h1>Response</h1>
+    
+    <div class="content">
+       
+        <form id="add-response">
+            <input type="button" class="button1" name="ROne" value="Yes">
+            <input type="button" class="button2" name="RTwo" value="No">
+            <input type="button" class="button3" name="RThree" value="Unsure">
+        </form>
+    </div>
+
     <script>
         // Web app's Firebase configuration
         var firebaseConfig = {
@@ -37,8 +38,16 @@
 
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        const dbl = firebase.firestore();
+        const db = firebase.firestore();
+        //update student name and id
+        var studentdata = localStorage['studentdata'];
+        localStorage.removeItem('studentdata');
+        var studentname = '';
+        var studentid = '';
+        studentarray = studentdata.split(',');
+        studentname = studentarray[0];
+        studentid = studentarray[1];
     </script>
-    <script src="login.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

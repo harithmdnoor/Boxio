@@ -1,9 +1,6 @@
-body {
-    background: #EA8C29;
+body{
+    background: #eab0dc;
     font-family: ubuntu;
-    /*
-        #eab0dc
-    */
 }
 
 h1{
@@ -152,9 +149,5 @@ li div{
 }
 
 .loginform{
-    border: none;
-}
-
-.loginfield {
-    border: none;
+    border: 0px;
 }

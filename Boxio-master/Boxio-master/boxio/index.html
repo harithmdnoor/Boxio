@@ -12,14 +12,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Login</h1>
     <form class="loginform">
-        <fieldset class="loginfield">
+        <h1>Login</h1>
+        <fieldset>
             <a class="subname">Username:</a> <input type="text" name="username" id="name" /><br />
             <a class="subpass">Password:</a> <input type="password" name="password" id="pass" /><br />
-            <br />
-            <button id="loginbtn" type="button" class="enterbtn" onclick="verify()">Submit</button>
-            <button class="enterbtn" type="reset">Reset</button>
+            <button type="button" class="enterbtn" onclick="verify()">Submit</button>
+            <input type="reset" />
         </fieldset>
     </form>
     <script>
