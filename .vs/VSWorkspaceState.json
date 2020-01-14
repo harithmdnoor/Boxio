@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\boxio",
-    "\\Boxio-master\\Boxio-master"
+    "\\Boxio-master",
+    "\\Boxio-master\\Boxio-master",
+    "\\Boxio-master\\Boxio-master\\boxio"
   ],
-  "SelectedNode": "\\boxio\\app.js",
+  "SelectedNode": "\\boxio\\admin.html",
   "PreviewInSolutionExplorer": false
 }

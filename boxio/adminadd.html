@@ -5,25 +5,32 @@
     <meta charset="utf-8" />
     <meta name="author" content="Boxio" />
     <meta name="description" content="blank" />
-    <title>Login Screen</title>
+    <title>Student</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <form class="loginform">
-        <fieldset class="loginfield">
-            <a class="subname">Username:</a> <input type="text" name="username" id="name" /><br />
-            <a class="subpass">Password:</a> <input type="password" name="password" id="pass" /><br />
-            <br />
-            <button id="loginbtn" type="button" class="enterbtn" onclick="verify()">Submit</button>
-            <button class="enterbtn" type="reset">Reset</button>
-        </fieldset>
-    </form>
-    <p></p>
-    <button id="btn" type="button" class="btn" onclick="admin()">Admin</button>
+    <h1>Admin Add Page</h1>
+
+    <div class="content">
+
+        <h3>Add Teacher</h3>
+        <form name="teacherForm" action="/app.js" onsubmit="return validateForm()" method="post">
+            Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="teacherName"> <br />
+            Password:&nbsp;&nbsp;<input type="text" id="teacherPass"> <br />
+            <button id="teacherbtn" type="button" class="enterbtn" onclick="addteacher()">Submit</button>
+        </form>
+        <h3>Add Student</h3>
+        <form name="studentForm" action="/app.js" onsubmit="return validateForm()" method="post">
+            Name: &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="studentName"> <br />
+            ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input type="number" id="studentID" pattern=".{8}"> <br />
+            <button id="studentbtn" type="button" class="enterbtn" onclick="addstudent()">Submit</button>
+        </form>
+        
+    </div>
+    
     <script>
         // Web app's Firebase configuration
         var firebaseConfig = {
@@ -39,8 +46,9 @@
 
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        const dbl = firebase.firestore();
+        const db = firebase.firestore();
+
     </script>
-    <script src="login.js"></script>
+    <script src="add.js"></script>
 </body>
 </html>
