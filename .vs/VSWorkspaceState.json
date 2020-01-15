@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\boxio"
+    "\\boxio",
+    "\\Boxio-master",
+    "\\Boxio-master\\Boxio-master",
+    "\\Boxio-master\\Boxio-master\\boxio"
   ],
-  "SelectedNode": "\\boxio\\styles.css",
+  "SelectedNode": "\\boxio\\admin.html",
   "PreviewInSolutionExplorer": false
 }
