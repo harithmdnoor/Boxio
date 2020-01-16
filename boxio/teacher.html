@@ -9,7 +9,6 @@
 
         <h1>Student response</h1>
         <div class="content">
-            
             <form id="add-response">
             </form> 
     
@@ -33,14 +32,6 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
-    var teacherdata = localStorage['teacherdata'];
-        localStorage.removeItem('teacherdata');
-        var teachername = '';
-        var teacherpass = '';
-        teacherarray = teacherdata.split(',');
-        teachername = teacherarray[0];
-        teacherpass = teacherarray[1];
-
 </script>        
 <script src="app.js"></script>
     </body>
