@@ -11,17 +11,20 @@ function renderResponse(doc){
     let name = document.createElement('span');
     let answer = document.createElement('span');
     let cross = document.createElement('div');
+    let sessionName = document.createElement("span");
 
     li.setAttribute('data-id', doc.id);
     id.textContent = doc.data().StudentID;
     name.textContent = doc.data().StudentName;
     answer.textContent = doc.data().Answer;
     cross.textContent = 'x';
+    sessionName.textContent = doc.data().SessionID;
 
     li.appendChild(id);
     li.appendChild(name);
     li.appendChild(answer);
     li.appendChild(cross);
+    li.appendChild(Sessi)
 
     studentList.appendChild(li);
 
@@ -51,7 +54,8 @@ form.addEventListener('click', (e) => {
             {
                 StudentName: studentname,
                 StudentID: studentid,
-                Answer: form.ROne.value
+                Answer: form.ROne.value,
+                SessionID: sessionName
             })        
     }
     else if (event.target == button2) {
