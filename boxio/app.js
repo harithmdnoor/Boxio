@@ -55,7 +55,6 @@ form.addEventListener('click', (e) => {
                 StudentName: studentname,
                 StudentID: studentid,
                 Answer: form.ROne.value,
-                SessionID: sessionName
             })        
     }
     else if (event.target == button2) {
