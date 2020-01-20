@@ -20,10 +20,12 @@ function renderResponse(doc){
     sessionList.appendChild(session_li);
 
     session_click.addEventListener('click', (e) => {
-        window.location.href = "student.html";
+        window.location.href = 'session.html';
         let id = e.target.parentElement.getAttribute('data-id');
-        localStorage.setItem("sessionID",id.session_name);
-        alert(db.collection('Session').doc(id.toString()));
+        var data = doc.data();
+        var SessionName = data.SessionName;
+        localStorage.setItem("sessionID",SessionName);
+        alert(SessionName);
     })
 }
 
