@@ -16,7 +16,7 @@ function verify() {
             studentidlist.forEach(ids => {
                 console.log(ids);
                 if (pas == ids.toString()) {
-                    window.location.href = 'student.html';
+                    window.location.href = 'session.html';
                     var studentdata = [nem, ids];
                     localStorage.setItem('studentdata',studentdata);
                     check = true;
