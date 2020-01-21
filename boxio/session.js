@@ -18,14 +18,15 @@ function renderResponse(doc){
     session_li.appendChild(session_click);
 
     sessionList.appendChild(session_li);
-
+    
+    
     session_click.addEventListener('click', (e) => {
-        window.location.href = 'session.html';
+        e.preventDefault();
+        window.location.href = 'student.html';
         let id = e.target.parentElement.getAttribute('data-id');
         var data = doc.data();
         var SessionName = data.SessionName;
         localStorage.setItem("sessionID",SessionName);
-        alert(SessionName);
     })
 }
 
