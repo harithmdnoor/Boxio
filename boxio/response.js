@@ -48,7 +48,8 @@ form.addEventListener('click', (e) => {
                 Answer: form.ROne.value,
                 SessionID: sessionID
 
-            })        
+            })     
+            alert("Successfully submitted reponse");
     }
     else if (event.target == button2) {
         db.collection('Response').add(    
@@ -59,6 +60,8 @@ form.addEventListener('click', (e) => {
                 SessionID: sessionID
 
             })
+            alert("Successfully submitted reponse"); 
+
     }
     else if (event.target == button3) {
         db.collection('Response').add(    
@@ -69,5 +72,7 @@ form.addEventListener('click', (e) => {
                 SessionID: sessionID
 
             })        
+            alert("Successfully submitted reponse");   
+
     }
   }) 
