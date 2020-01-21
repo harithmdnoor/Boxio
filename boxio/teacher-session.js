@@ -26,6 +26,7 @@ function renderResponse(doc){
         var data = doc.data();
         var SessionName = data.SessionName;
         localStorage.setItem("sessionID",SessionName);
+        window.location.href = 'teacher.html';
     })
     
 }

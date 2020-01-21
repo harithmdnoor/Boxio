@@ -62,7 +62,7 @@ function deleteteacher() {
     window.location.href = 'admindeleteteacher.html';
 }
 function teacher() {
-    window.location.href = 'teacher.html';
+    window.location.href = 'teacher-session.html';
 }
 function admin() {
     window.location.href = 'adminmenu.html';

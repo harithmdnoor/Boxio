@@ -44,7 +44,7 @@ function renderResponse(doc){
 
 
 // Real-time listener (Getting real-time data)
-db.collection('Response').onSnapshot(snapshot => {
+db.collection('Response').where("SessionID", "==", sessionID ).onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
       if(change.type == 'added'){
