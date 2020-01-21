@@ -1,10 +1,17 @@
 const studentList = document.querySelector('#student-list');
-const form = document.querySelector('#add-response');
-const button1 = document.querySelector('.button1')
-const button2 = document.querySelector('.button2')
-const button3 = document.querySelector('.button3')
-document.getElementById("header").innerHTML = localStorage.getItem("sessionID");
-// create element & render
+
+var sessionID = localStorage.getItem("sessionID");
+
+
+
+/*
+// getting data
+db.collection('Students').get().then(snapshot => {
+    snapshot.docs.forEach(doc => {
+        renderStudents(doc);
+    });
+});
+*/
 function renderResponse(doc){
     let li = document.createElement('li');
     let id = document.createElement('span');
@@ -35,45 +42,7 @@ function renderResponse(doc){
     })
 }
 
-/*
-// getting data
-db.collection('Students').get().then(snapshot => {
-    snapshot.docs.forEach(doc => {
-        renderStudents(doc);
-    });
-});
-*/
 
-// saving data
-form.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (event.target == button1)
-    {
-        db.collection('Response').add(    
-            {
-                StudentName: studentname,
-                StudentID: studentid,
-                Answer: form.ROne.value
-
-            })        
-    }
-    else if (event.target == button2) {
-        db.collection('Response').add(    
-            {
-                StudentName: studentname,
-                StudentID: studentid,
-                Answer: form.RTwo.value
-            })
-    }
-    else if (event.target == button3) {
-        db.collection('Response').add(    
-            {
-                StudentName: studentname,
-                StudentID: studentid,
-                Answer: form.RThree.value
-            })        
-    }
-  }) 
 // Real-time listener (Getting real-time data)
 db.collection('Response').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
