@@ -14,7 +14,7 @@ function verify() {
     studentnamelist.forEach(doc => {
         if (nem == doc) {
             studentidlist.forEach(ids => {
-                console.log(ids);
+                //console.log(ids);
                 if (pas == ids.toString()) {
                     window.location.href = 'session.html';
                     var studentdata = [nem, ids];
@@ -27,7 +27,7 @@ function verify() {
     teachernamelist.forEach(doc => {
         if (nem == doc) {
             teacherpasslist.forEach(ids => {
-                console.log(ids);
+                //console.log(ids);
                 if (pas == ids) {
                     var isAdmin = teacheradminlist[counter];
                     window.location.href = 'teacher_admin_menu.html';
