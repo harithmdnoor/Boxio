@@ -10,14 +10,45 @@
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
 </head>
 <body>
     <h1>Rewards</h1>
-    <rew>Reward No 1</rew>
-    <rew>Reward No 2</rew>
-    <rew>Reward No 3</rew>
-    <rew>Reward No 4</rew>
-    <rew>Reward No 5</rew>
-    <rew>Reward No 6</rew>
+
+
+    <div class="row">
+        <div class="column">
+            <p>Highlighter - 1st Place</p>
+            <img src="highlighter.jpg" alt="Snow" style="width:100%">
+        </div>
+        <div class="column">
+            <p>Pen - 2nd Place</p>
+            <img src="pen.jpg" alt="Forest" style="width:100%">
+        </div>
+        <div class="column">
+            <p>Eraser - 3rd Place</p>
+            <img src="eraser.jpg" alt="Mountains" style="width:100%">
+        </div>
+    </div>
+
+
 </body>
 </html>
