@@ -1,5 +1,6 @@
 // JavaScript source code
 function addteacher() {
+    var counter = 0;
     var nem = document.getElementById('teacherName').value;
     var pas = document.getElementById('teacherPass').value
     var adm = document.getElementById('isAdmin');
@@ -18,13 +19,29 @@ function addteacher() {
                 Password: pas.toString(),
                 IsAdmin: admin
             })
-        setTimeout(function () {
-            window.alert("Added Successfully");
-            location.reload();
-        }, 1000);
+        db.collection('Teacher').get().then(snapshot => {
+            data = snapshot.docs;
+
+            data.forEach(doc => {
+                var teachername = '';
+                const guide = doc.data();
+                teachername = guide.Name;
+                if (nem.toString() == teachername.toString()) {
+                    window.alert("Added Successfully");
+                    location.reload();
+                }
+                else {
+                    counter += 1;
+                    if (counter == data.length) {
+                        window.alert("Failed to add");
+                        location.reload();
+                    }
+                }
+            })
+        });
     }
     else {
-        window.alert("Failed to add");
+        window.alert("Please Enter a valid name/password");
         location.reload();
     }
 }
@@ -38,13 +55,29 @@ function addstudent() {
                 Name: nem.toString(),
                 Id: pas.toString()
             })
-        setTimeout(function () {
-            window.alert("Added Successfully");
-            location.reload();
-        }, 1000);
+        db.collection('Students').get().then(snapshot => {
+            data = snapshot.docs;
+
+            data.forEach(doc => {
+                var studentname = '';
+                const guide = doc.data();
+                studentname = guide.Name;
+                if (nem.toString() == studentname.toString()) {
+                    window.alert("Added Successfully");
+                    location.reload();
+                }
+                else {
+                    counter += 1;
+                    if (counter == data.length) {
+                        window.alert("Failed to add");
+                        location.reload();
+                    }
+                }
+            })
+        });
     }
     else {
-        window.alert("Failed to add");
+        window.alert("Please Enter a valid name/ID(8 characters)");
         location.reload();
     }
 }
