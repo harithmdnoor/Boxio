@@ -1,11 +1,39 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+﻿<html>
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <h1>Delete Teacher</h1>
+    <div class="content">
+
+        <form id="delete-teacher">
+        </form>
+
+        <ul id="teacher-list"></ul>
+
+    </div>
+
+    <script>
+      // Web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDEQ5uWfzItrrAf9z6KwZM3YDv5UUgOt0s",
+        authDomain: "portfolio-2-boxio.firebaseapp.com",
+        databaseURL: "https://portfolio-2-boxio.firebaseio.com",
+        projectId: "portfolio-2-boxio",
+        storageBucket: "portfolio-2-boxio.appspot.com",
+        messagingSenderId: "186874167723",
+        appId: "1:186874167723:web:8af804c5e634f83b8692ee",
+        measurementId: "G-HPM59MD6Q7"
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+    <script src="admindeleteteacher.js"></script>
 </body>
 </html>

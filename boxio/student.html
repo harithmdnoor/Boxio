@@ -12,7 +12,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
 </head>
 <body>
-    <h1>Response</h1>
+    <h1><div id= "header"></div></h1>
     
     <div class="content">
        
@@ -47,7 +47,10 @@
         studentarray = studentdata.split(',');
         studentname = studentarray[0];
         studentid = studentarray[1];
+        
+
+        document.getElementById("header").innerHTML = localStorage.getItem("sessionID");
     </script>
-    <script src="app.js"></script>
+    <script src="response.js"></script>
 </body>
 </html>

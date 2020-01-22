@@ -3,7 +3,9 @@ var studentnamelist = [];
 var studentidlist = [];
 var teachernamelist = [];
 var teacherpasslist = [];
+var teacheradminlist = [];
 var check = false;
+var counter = 0;
 // Login
 function verify() {
     var nem = document.getElementById('name').value;
@@ -12,9 +14,9 @@ function verify() {
     studentnamelist.forEach(doc => {
         if (nem == doc) {
             studentidlist.forEach(ids => {
-                console.log(ids);
+                //console.log(ids);
                 if (pas == ids.toString()) {
-                    window.location.href = 'student.html';
+                    window.location.href = 'session.html';
                     var studentdata = [nem, ids];
                     localStorage.setItem('studentdata',studentdata);
                     check = true;
@@ -25,15 +27,17 @@ function verify() {
     teachernamelist.forEach(doc => {
         if (nem == doc) {
             teacherpasslist.forEach(ids => {
-                console.log(ids);
+                //console.log(ids);
                 if (pas == ids) {
-                    window.location.href = 'teacher.html';
-                    var teacherdata = [nem, ids];
+                    var isAdmin = teacheradminlist[counter];
+                    window.location.href = 'teacher_admin_menu.html';
+                    var teacherdata = [nem, ids, isAdmin];
                     localStorage.setItem('teacherdata', teacherdata);
                     check = true;
                 }
             })
         }
+        counter += 1;
     })
     if (check == false) {
         window.location.href = 'index.html';
@@ -74,11 +78,14 @@ dbl.collection('Teacher').get().then(snapshot => {
     datat.forEach(doct => {
         var teachername = '';
         var teacherpass = '';
+        var isAdmin = '';
         const guide = doct.data();
         teachername = guide.Name;
         teacherpass = guide.Password;
+        isAdmin = guide.IsAdmin;
         teachernamelist.push(teachername);
         teacherpasslist.push(teacherpass);
+        teacheradminlist.push(isAdmin);
     })
 });
 

@@ -19,13 +19,17 @@
         <h3>Add Teacher</h3>
         <form name="teacherForm" action="/app.js" onsubmit="return validateForm()" method="post">
             Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="teacherName"> <br />
-            Password:&nbsp;&nbsp;<input type="text" id="teacherPass"> <br />
+            Password:&nbsp;&nbsp;&nbsp;<input type="text" id="teacherPass"> <br />
+            Admin:&nbsp;&nbsp;&nbsp;&nbsp;<select id="isAdmin">
+                <option value="true">true</option>
+                <option value="false" selected>false</option>
+            </select> <br />
             <button id="teacherbtn" type="button" class="enterbtn" onclick="addteacher()">Submit</button>
         </form>
         <h3>Add Student</h3>
         <form name="studentForm" action="/app.js" onsubmit="return validateForm()" method="post">
             Name: &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="studentName"> <br />
-            ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<input type="number" id="studentID" pattern=".{8}"> <br />
+            ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<input type="number" id="studentID" pattern=".{8}"> <br />
             <button id="studentbtn" type="button" class="enterbtn" onclick="addstudent()">Submit</button>
         </form>
         
@@ -49,6 +53,6 @@
         const db = firebase.firestore();
 
     </script>
-    <script src="add.js"></script>
+    <script src="admin.js"></script>
 </body>
 </html>
