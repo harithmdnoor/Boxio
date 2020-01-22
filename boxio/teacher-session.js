@@ -8,15 +8,24 @@ function renderResponse(doc){
     let session_id =  document.createElement('span');
     let session_name = document.createElement('span');
     let session_click = document.createElement('BUTTON');
+    let session_cross = document.createElement('div');
+    let session_stat = document.createElement('BUTTON');
+
     
     session_li.setAttribute('data-id',doc.id);
     session_id.textContent = doc.data().SessionId;
     session_name.textContent = doc.data().SessionName;
     session_click.textContent = "Enter Session";
+    session_cross.textContent = 'x';
+    session_stat.textContent = 'Session Statistics';
+
 
     session_li.appendChild(session_id);
     session_li.appendChild(session_name);
     session_li.appendChild(session_click);
+    session_li.appendChild(session_cross);
+    session_li.appendChild(session_stat);
+
 
     sessionList.appendChild(session_li);
     
@@ -28,18 +37,39 @@ function renderResponse(doc){
         localStorage.setItem("sessionID",SessionName);
         window.location.href = 'teacher.html';
     })
+
+    session_cross.addEventListener('click', (e) => {
+        e.stopPropagation();
+        let id = e.target.parentElement.getAttribute('data-id');
+        db.collection('Session').doc(id).delete();
+    })
+
+    session_stat.addEventListener('click', (e) => {
+        e.preventDefault();
+        var data = doc.data();
+        var SessionName = data.SessionName;
+        localStorage.setItem("sessionID",SessionName);
+        window.location.href = 'session-stats.html';
+    })
     
 }
 function createSession(){
     var newSession = document.getElementById("newSession").value;
-    var addSession = document.getElementById("addSession").addEventListener("click",function(event){
-        event.preventDefault();
+    if (newSession !=""){
         db.collection('Session').add(    
             {
                 SessionName: newSession.toString()
-            })  
-    })
-    document.getElementById("newSession").value= " ";
+            })
+            setTimeout(function () {
+                window.alert("Added Successfully");
+                location.reload();
+            }, 1000);
+    }
+    else {
+        window.alert("Failed to add");
+        location.reload();
+    }
+    
     
 
 }
