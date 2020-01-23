@@ -2,7 +2,8 @@ const studentList = document.querySelector('#student-list');
 
 var sessionID = localStorage.getItem("sessionID");
 
-
+var header = document.getElementById('header');
+header.textContent = sessionID;
 
 /*
 // getting data
