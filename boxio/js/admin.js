@@ -46,6 +46,7 @@ function addteacher() {
     }
 }
 function addstudent() {
+    counter = 0;
     var nem = document.getElementById('studentName').value;
     var pas = document.getElementById('studentID').value;
     var passcheck = pas.toString();

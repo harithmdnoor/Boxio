@@ -41,6 +41,7 @@ li{
 
 li:nth-child(even){
     padding: 20px;
+    padding-bottom: 50px;
     background: white;
 }
 
