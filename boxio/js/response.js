@@ -39,6 +39,10 @@ function renderResponse(doc){
 // saving data
 form.addEventListener('click', (e) => {
     e.preventDefault();
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time;
     if (event.target == button1)
     {
         db.collection('Response').add(    
@@ -46,7 +50,8 @@ form.addEventListener('click', (e) => {
                 StudentName: studentname,
                 StudentID: studentid,
                 Answer: form.ROne.value,
-                SessionID: sessionID
+                SessionID: sessionID,
+                TimeCreated: dateTime.toString()
 
             })     
             alert("Successfully submitted reponse");
@@ -57,7 +62,8 @@ form.addEventListener('click', (e) => {
                 StudentName: studentname,
                 StudentID: studentid,
                 Answer: form.RTwo.value,
-                SessionID: sessionID
+                SessionID: sessionID,
+                TimeCreated: dateTime.toString()
 
             })
             alert("Successfully submitted reponse"); 
@@ -69,7 +75,8 @@ form.addEventListener('click', (e) => {
                 StudentName: studentname,
                 StudentID: studentid,
                 Answer: form.RThree.value,
-                SessionID: sessionID
+                SessionID: sessionID,
+                TimeCreated: dateTime.toString()
 
             })        
             alert("Successfully submitted reponse");   

@@ -116,6 +116,7 @@ function checkOptions() {
     var teachername = teacherarray[0];
     var teacherpass = teacherarray[1];
     var isAdmin = teacherarray[2];
+    localStorage.setItem("teacherName",teachernem);
     teachernem.textContent = teachername;
     if (isAdmin == "true") {
         adminbtn.style.display = "visible";
