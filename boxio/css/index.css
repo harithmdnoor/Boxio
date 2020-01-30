@@ -28,10 +28,19 @@ img{
     transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
   }
 
- 
- 
-  
+  section{
+    display: flex;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 12px;
+    margin: 0px auto;
+    border-radius: 20px 20px 20px 20px;
+    background: white;
+}
 
+ 
+ 
   form button {
     margin-top: 35px;
     background-color: white;
@@ -67,7 +76,7 @@ img{
   form .question label {
     transform-origin: left center;
     color: #000;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.01em;
     font-size: 20px;
     box-sizing: border-box;
@@ -163,6 +172,10 @@ img{
     -webkit-transform: translate(5px, -35px) scale(0.6);
     transform: translate(5px, -35px) scale(0.6);
   }
+
+  
+ 
+
   
   /* .subname {
     font-size: 24px;
