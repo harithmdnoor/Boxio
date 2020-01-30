@@ -46,6 +46,7 @@ function addteacher() {
     }
 }
 function addstudent() {
+    counter = 0;
     var nem = document.getElementById('studentName').value;
     var pas = document.getElementById('studentID').value;
     var passcheck = pas.toString();
@@ -115,6 +116,7 @@ function checkOptions() {
     var teachername = teacherarray[0];
     var teacherpass = teacherarray[1];
     var isAdmin = teacherarray[2];
+    localStorage.setItem("teacherName",teachernem);
     teachernem.textContent = teachername;
     if (isAdmin == "true") {
         adminbtn.style.display = "visible";

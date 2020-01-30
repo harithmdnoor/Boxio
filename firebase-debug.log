@@ -1,0 +1,102 @@
+[debug] [2020-01-24T13:03:09.044Z] ----------------------------------------------------------------------
+[debug] [2020-01-24T13:03:09.045Z] Command:       /usr/local/bin/firebase /Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase init
+[debug] [2020-01-24T13:03:09.045Z] CLI Version:   7.12.1
+[debug] [2020-01-24T13:03:09.045Z] Platform:      darwin
+[debug] [2020-01-24T13:03:09.045Z] Node Version:  v12.13.1
+[debug] [2020-01-24T13:03:09.046Z] Time:          Fri Jan 24 2020 21:03:09 GMT+0800 (Singapore Standard Time)
+[debug] [2020-01-24T13:03:09.046Z] ----------------------------------------------------------------------
+[debug] [2020-01-24T13:03:09.046Z] 
+[debug] [2020-01-24T13:03:09.051Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-24T13:03:09.052Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/harithmdnoor/Projects/Boxio
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project.
+[debug] [2020-01-24T13:04:35.908Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
+
+[debug] [2020-01-24T13:04:37.507Z] <<< HTTP RESPONSE 400
+[debug] [2020-01-24T13:04:37.508Z] <<< HTTP RESPONSE BODY
+[debug] [2020-01-24T13:04:37.509Z] HTTP Error: 400, field [project_id] has issue [project_id must be at least 6 characters long]
+[debug] [2020-01-24T13:04:37.542Z] FirebaseError: HTTP Error: 400, field [project_id] has issue [project_id must be at least 6 characters long]
+    at module.exports (/Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/api.js:39:35)
+    at Request.self.callback (/Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:210:5)
+    at Request.EventEmitter.emit (domain.js:475:20)
+    at Request.<anonymous> (/Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/request/request.js:1161:10)
+    at Request.emit (events.js:210:5)
+    at Request.EventEmitter.emit (domain.js:475:20)
+    at IncomingMessage.<anonymous> (/Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/request/request.js:1083:12)
+    at Object.onceWrapper (events.js:299:28)
+    at IncomingMessage.emit (events.js:215:7)
+    at IncomingMessage.EventEmitter.emit (domain.js:475:20)
+    at endReadableNT (_stream_readable.js:1184:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+[error] 
+[error] Error: Failed to create Google Cloud project. See firebase-debug.log for more info.
+[debug] [2020-01-24T13:07:34.040Z] ----------------------------------------------------------------------
+[debug] [2020-01-24T13:07:34.042Z] Command:       /usr/local/bin/firebase /Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase init
+[debug] [2020-01-24T13:07:34.042Z] CLI Version:   7.12.1
+[debug] [2020-01-24T13:07:34.042Z] Platform:      darwin
+[debug] [2020-01-24T13:07:34.042Z] Node Version:  v12.13.1
+[debug] [2020-01-24T13:07:34.043Z] Time:          Fri Jan 24 2020 21:07:34 GMT+0800 (Singapore Standard Time)
+[debug] [2020-01-24T13:07:34.043Z] ----------------------------------------------------------------------
+[debug] [2020-01-24T13:07:34.043Z] 
+[debug] [2020-01-24T13:07:34.047Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-24T13:07:34.048Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/harithmdnoor/Projects/Boxio
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project.
+[debug] [2020-01-24T13:09:29.082Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects  
+
+[debug] [2020-01-24T13:09:30.365Z] <<< HTTP RESPONSE 400
+[debug] [2020-01-24T13:09:30.365Z] <<< HTTP RESPONSE BODY
+[debug] [2020-01-24T13:09:30.367Z] HTTP Error: 400, field [project_id] has issue [project_id must be at least 6 characters long]
+[debug] [2020-01-24T13:09:30.417Z] FirebaseError: HTTP Error: 400, field [project_id] has issue [project_id must be at least 6 characters long]
+    at module.exports (/Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/responseToError.js:38:12)
+    at Request._callback (/Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/api.js:39:35)
+    at Request.self.callback (/Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:210:5)
+    at Request.EventEmitter.emit (domain.js:475:20)
+    at Request.<anonymous> (/Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/request/request.js:1161:10)
+    at Request.emit (events.js:210:5)
+    at Request.EventEmitter.emit (domain.js:475:20)
+    at IncomingMessage.<anonymous> (/Users/harithmdnoor/.cache/firebase/tools/lib/node_modules/request/request.js:1083:12)
+    at Object.onceWrapper (events.js:299:28)
+    at IncomingMessage.emit (events.js:215:7)
+    at IncomingMessage.EventEmitter.emit (domain.js:475:20)
+    at endReadableNT (_stream_readable.js:1184:12)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+[error] 
+[error] Error: Failed to create Google Cloud project. See firebase-debug.log for more info.

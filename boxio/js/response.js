@@ -3,8 +3,10 @@ const form = document.querySelector('#add-response');
 const button1 = document.querySelector('.button1')
 const button2 = document.querySelector('.button2')
 const button3 = document.querySelector('.button3')
+document.getElementById("header").innerHTML = localStorage.getItem("sessionID");
+var sessionID = localStorage.getItem("sessionID");
 
-// create element & render
+
 function renderResponse(doc){
     let li = document.createElement('li');
     let id = document.createElement('span');
@@ -23,8 +25,10 @@ function renderResponse(doc){
     li.appendChild(answer);
     li.appendChild(cross);
 
+
     studentList.appendChild(li);
 
+    
 // delete data
     cross.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -32,55 +36,50 @@ function renderResponse(doc){
         db.collection('Response').doc(id).delete();
     })
 }
-
-/*
-// getting data
-db.collection('Students').get().then(snapshot => {
-    snapshot.docs.forEach(doc => {
-        renderStudents(doc);
-    });
-});
-*/
-
 // saving data
 form.addEventListener('click', (e) => {
     e.preventDefault();
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time;
     if (event.target == button1)
     {
         db.collection('Response').add(    
             {
                 StudentName: studentname,
                 StudentID: studentid,
-                Answer: form.ROne.value
-            })        
+                Answer: form.ROne.value,
+                SessionID: sessionID,
+                TimeCreated: dateTime.toString()
+
+            })     
+            alert("Successfully submitted reponse");
     }
     else if (event.target == button2) {
         db.collection('Response').add(    
             {
                 StudentName: studentname,
                 StudentID: studentid,
-                Answer: form.RTwo.value
+                Answer: form.RTwo.value,
+                SessionID: sessionID,
+                TimeCreated: dateTime.toString()
+
             })
+            alert("Successfully submitted reponse"); 
+
     }
     else if (event.target == button3) {
         db.collection('Response').add(    
             {
                 StudentName: studentname,
                 StudentID: studentid,
-                Answer: form.RThree.value
+                Answer: form.RThree.value,
+                SessionID: sessionID,
+                TimeCreated: dateTime.toString()
+
             })        
+            alert("Successfully submitted reponse");   
+
     }
   }) 
-
-// Real-time listener (Getting real-time data)
-db.collection('Response').onSnapshot(snapshot => {
-    let changes = snapshot.docChanges();
-    changes.forEach(change => {
-      if(change.type == 'added'){
-        renderResponse(change.doc);
-    } else if (change.type == 'removed') {
-        let li = studentList.querySelector('[data-id=' + change.doc.id + ']');
-        studentList.removeChild(li);
-    }
-    })
-})

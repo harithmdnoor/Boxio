@@ -1,6 +1,10 @@
-body{
-    background: #eab0dc;
-    font-family: ubuntu;
+body {
+    background: #7B96B4;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", 
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+    /*
+        #eab0dc
+    */
 }
 
 h1{
@@ -12,12 +16,11 @@ h1{
 }
 
 .content{
-    background: #fff;
+    background: white;
     max-width: 960px;
     margin: 30px auto;
     padding:  20px 30px;
-    border-radius: 10px 120px 10px 10px;
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1)
+    border-radius: 20px 20px 20px 20px;
 }
 
 ul{
@@ -27,17 +30,19 @@ ul{
 
 li{
     padding: 20px;
-    background: #f6f6f6;
+    padding-bottom: 50px;
+    background: white;
     font-size: 20px;
-    color: #555;
+    color: black;
     position: relative;
-    border-bottom: 1px solid #e6e6e6;
+    border: .5px solid #e6e6e6;
     height: 46px;
 }
 
 li:nth-child(even){
     padding: 20px;
-    background: #f2f2f2;
+    padding-bottom: 50px;
+    background: white;
 }
 
 li span{
@@ -61,6 +66,9 @@ li div{
     font-weight:  bold;
     cursor:  pointer;
 }
+
+
+
 
 .button1 {
     display: inline-flex;
@@ -111,43 +119,16 @@ li div{
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color:#33B3FF;
+    background-color:#FFBF00;
     border: none;
     border-radius: 12px;
     box-shadow: 0 5px #999;
 }
 .button3:active{
-    background-color: #3382FF;
+    background-color:#FFBF00;
     box-shadow: 0 2px #666;
     transform: translateY(4px);
 }
 
-.enterbtn{
-    display: inline-flex;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #33B3FF;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 5px #999;
-}
 
-.subname {
-    font-size: 24px;
-    text-decoration: none;
-    color: #fff;
-}
-.subpass {
-    font-size: 24px;
-    text-decoration: none;
-    color: #fff;
-}
 
-.loginform{
-    border: 0px;
-}
