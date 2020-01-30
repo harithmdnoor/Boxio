@@ -1,7 +1,5 @@
 const sessionList = document.querySelector('#session-list');
 const form = document.querySelector('#add-response');
-
-
 function renderResponse(doc){
 
     let session_li = document.createElement('li');
@@ -52,13 +50,20 @@ function renderResponse(doc){
         window.location.href = 'session-stats.html';
     })
     
+    
+    
 }
 function createSession(){
     var newSession = document.getElementById("newSession").value;
     if (newSession !=""){
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time;
         db.collection('Session').add(    
             {
-                SessionName: newSession.toString()
+                SessionName: newSession.toString(),
+                TimeCreated: dateTime.toString()
             })
             setTimeout(function () {
                 window.alert("Added Successfully");
