@@ -28,28 +28,8 @@ img{
     transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
   }
 
-  form {
-    position: relative;
-    display: inline-block;
-    width: 500px;
-    box-sizing: border-box;
-    padding: 30px 25px;
-    background-color: white;
-    border-radius: 40px;
-    margin: 40px 0;
-    left: 50%;
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-  }
-  /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  form{
-    width: 400px;
-  }
-}
-
+ 
+ 
   
 
   form button {
@@ -87,7 +67,7 @@ img{
   form .question label {
     transform-origin: left center;
     color: #000;
-    font-weight: 100;
+    font-weight: 500;
     letter-spacing: 0.01em;
     font-size: 20px;
     box-sizing: border-box;
@@ -136,7 +116,6 @@ img{
   
   .question input[type="text"]:valid ~ label {
     text-transform: uppercase;
-    font-style: italic;
     -moz-transform: translate(5px, -35px) scale(0.6);
     -ms-transform: translate(5px, -35px) scale(0.6);
     -webkit-transform: translate(5px, -35px) scale(0.6);
@@ -179,7 +158,6 @@ img{
   }
    .question input[type="password"]:valid ~ label {
     text-transform: uppercase;
-    font-style: italic;
     -moz-transform: translate(5px, -35px) scale(0.6);
     -ms-transform: translate(5px, -35px) scale(0.6);
     -webkit-transform: translate(5px, -35px) scale(0.6);
