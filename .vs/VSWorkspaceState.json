@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\boxio"
+    "\\boxio",
+    "\\boxio\\css",
+    "\\boxio\\js",
+    "\\boxio\\pictures"
   ],
-  "SelectedNode": "\\boxio\\admin.js",
+  "SelectedNode": "\\boxio\\rewards.html",
   "PreviewInSolutionExplorer": false
 }
