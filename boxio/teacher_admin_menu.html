@@ -1,19 +1,25 @@
 ﻿<html>
 <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="icon" href="pictures/boxioicon.png" type="image/png" sizes="16x16">
+    <title>Main Menu</title>
+    
 </head>
 <body>
-
     <h1><a id="teachername"></a><br /></h1>
-    <div class="content">
+    <div>
         <a id="teachername"></a><br />
         <button id="teacherbtn" type="button" class="teachbtn" onclick="teacher()">Teacher Menu</button>
 
         <button id="adminbtn" type="button" class="adminbtn" onclick="admin()">Admin Menu</button>
     </div>
+
+    
 
     <script>
   // Web app's Firebase configuration

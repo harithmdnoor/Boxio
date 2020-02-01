@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Boxio" />
     <meta name="description" content="blank" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Login</title>
     <link rel="icon" href="pictures/boxioicon.png" type="image/png" sizes="16x16">
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
@@ -15,7 +16,7 @@
 </head>
 <body>
     <h1 class="loginText">Login</h1>
-    <section>
+    <div class="content">
         
     <form class="loginform">
         <img src="pictures/boxiologo.png" alt="Smiley face">
@@ -37,7 +38,7 @@
             <a class="subpass"></a><input class="inputRcorner type="password" name="password" id="pass" placeholder="  Password" /><br />
             <br /> -->
             <button id="loginbtn" type="button" class="enterbtn" onclick="verify()">Submit</button>
-        </section>
+        </div>
             <!-- <button class="enterbtn" type="reset">Reset</button> -->
         </fieldset>
     </form>
