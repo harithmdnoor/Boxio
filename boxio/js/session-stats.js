@@ -21,9 +21,9 @@ function drawChart() {
         'width': 550,
         'height': 400,
         slices: {
-            0: { color: '#57FF02' },
-            1: { color: '#FF1F00' },
-            2: { color: '#FFC102' }
+            0: { color: '#4cb050' },
+            1: { color: '#ff3334' },
+            2: { color: '#ffbe00' }
         }
     };
 
