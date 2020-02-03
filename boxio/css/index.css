@@ -3,8 +3,8 @@ h1{
     font-size: 50px;
     letter-spacing: 2px;
     text-align: center;
-    margin-top: 30px;
-    margin-bottom: 0px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 fieldset{
@@ -28,24 +28,19 @@ img{
     transition: all 0.25s cubic-bezier(0.53, 0.01, 0.35, 1.5);
   }
 
-  form {
-    position: relative;
-    display: inline-block;
-    max-width: 700px;
-    min-width: 500px;
-    box-sizing: border-box;
-    padding: 30px 25px;
-    background-color: white;
-    border-radius: 40px;
-    margin: 40px 0;
-    left: 50%;
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-  }
-  
+  .content{
+    display: flex;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 12px;
+    margin: 0px auto;
+    border-radius: 20px 20px 20px 20px;
+    background: white;
+}
 
+ 
+ 
   form button {
     margin-top: 35px;
     background-color: white;
@@ -81,7 +76,7 @@ img{
   form .question label {
     transform-origin: left center;
     color: #000;
-    font-weight: 100;
+    font-weight: 700;
     letter-spacing: 0.01em;
     font-size: 20px;
     box-sizing: border-box;
@@ -130,7 +125,6 @@ img{
   
   .question input[type="text"]:valid ~ label {
     text-transform: uppercase;
-    font-style: italic;
     -moz-transform: translate(5px, -35px) scale(0.6);
     -ms-transform: translate(5px, -35px) scale(0.6);
     -webkit-transform: translate(5px, -35px) scale(0.6);
@@ -173,12 +167,15 @@ img{
   }
    .question input[type="password"]:valid ~ label {
     text-transform: uppercase;
-    font-style: italic;
     -moz-transform: translate(5px, -35px) scale(0.6);
     -ms-transform: translate(5px, -35px) scale(0.6);
     -webkit-transform: translate(5px, -35px) scale(0.6);
     transform: translate(5px, -35px) scale(0.6);
   }
+
+ 
+ 
+
   
   /* .subname {
     font-size: 24px;

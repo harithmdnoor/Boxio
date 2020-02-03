@@ -1,0 +1,82 @@
+
+.teachbtn {
+    border: none;
+    background-color:#B7D3C4;
+    cursor:pointer;
+    font-size: 35px;
+    border-radius: 10px;
+    width: 49%;
+    height: 200px;
+    float: left;
+}
+
+.teachbtn:hover {
+   background-color: #8FAC9A;
+    color:white;
+}
+
+.adminbtn {
+    border: none;
+    background-color: #D9C1D7;
+    cursor:pointer;
+    font-size: 35px;
+    border-radius: 10px;
+    float: right;
+    width: 49%;
+    height: 200px;
+
+    
+}
+
+.adminbtn:hover {
+   background-color: #B38F8F;
+    color:white;
+}
+
+div{
+    padding: 0px 100px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media (min-width: 320px) and (max-width: 480px) {
+   
+    div{
+        padding: 0px 10px;
+        margin-top: 20%;
+    }
+   
+    
+
+    .teachbtn {
+        border: none;
+        background-color:#B7D3C4;
+        cursor:pointer;
+        font-size: 30px;
+        border-radius: 10px;
+        height: 150px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .teachbtn:hover {
+       background-color: #8FAC9A;
+        color:white;
+    }
+    
+    .adminbtn {
+        border: none;
+        background-color: #D9C1D7;
+        cursor:pointer;
+        font-size: 30px;
+        border-radius: 10px;
+        height: 150px;
+        width: 100%;
+    
+        
+    }
+    
+    .adminbtn:hover {
+       background-color: #B38F8F;
+        color:white;
+    }
+}
+ 

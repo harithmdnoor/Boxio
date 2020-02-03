@@ -64,6 +64,7 @@ function createSession(){
             {
                 SessionName: newSession.toString(),
                 TimeCreated: dateTime.toString()
+
             })
             setTimeout(function () {
                 window.alert("Added Successfully");
