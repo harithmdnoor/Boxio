@@ -1,91 +1,57 @@
-var displayMode = true;
+google.charts.load('current', { 'packages': ['corechart'] });
+google.charts.setOnLoadCallback(drawChart);
+var sessionID = localStorage.getItem("sessionID");
+var header = document.getElementById('header');
+header.textContent = sessionID + " Session Statistics";
 
-$scope.statistics = function () {
-    $mdSidenav('left').close();
-    $state.go('statistics');
-    $timeout(function () {
-        setUpChart();
-        var timer;
-        $(window).on('resize', function () {
-            clearTimeout(timer);
-            timer = setTimeout(function () {
-                setUpChart();
-            }, 250);
-        });
-    });
-};
+var Yes = 0;
+var No = 0;
+var Unsure = 0;
+function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+        ['Reponse', 'Response'],
+        ['Yes', Yes],
+        ['No', No],
+        ['Unsure', Unsure]
+    ]);
 
-function setUpChart() {
-
-    $.ajax({
-        url: '//https://portfolio-2-boxio.firebaseio.com',
-        dataType: 'script',
-        cache: true,
-        success: function () {
-            google.load('visualization', '1', {
-                'packages': ['corechart'],
-                'callback': drawChart
-            });
+    // Optional; add a title and set the width and height of the chart
+    var options = {
+        'title': 'Session Statistics',
+        'width': 550,
+        'height': 400,
+        slices: {
+            0: { color: '#4cb050' },
+            1: { color: '#ff3334' },
+            2: { color: '#ffbe00' }
         }
-    });
+    };
 
-    function drawChart() {
-
-        // This links to my Firebase url
-        userRef.on('value', function (snapshot) {
-
-            var pass = 0;
-            var fail = 0;
-
-            snapshot.forEach(function (snapshot) {
-                var userResults = snapshot.val();
-                if (userResults.passFail === 'Pass') {
-                    pass = pass + 1;
-                }
-                if (userResults.passFail === 'Fail') {
-                    fail = fail + 1;
-                }
-            });
-
-            if (pass === 0 && fail === 0) {
-                console.log('No data: ' + pass + ' & ' + fail);
-                $scope.error = true;
-                $scope.errorMessage = 'No user data available, please try  
-                again later.';
-            } else {
-                console.log('Is data: ' + pass + ' & ' + fail);
-                $scope.error = false;
-                $scope.errorMessage = null;
-                var data = new google.visualization.DataTable();
-                data.addColumn('string', 'Result');
-                data.addColumn('number', 'Delegates');
-                data.addRows([
-                    ['Pass', pass],
-                    ['Fail', fail]
-                ]);
-
-                var options = {
-                    'is3D': displayMode,
-                    'chartArea': {'width': '100%', 'height': '80%'},
-                    'legend': {'position': 'top', 'alignment': 'center'}
-                };
-
-                var chart = new 
-         google.visualization.PieChart(document.getElementById('pieChart'));
-                chart.draw(data, options);
-            }
-
-        });
-
-    }
-
+    // Display the chart inside the <div> element with id="piechart"
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
 }
-
-// Changes chart type to 3D or top view on a butto click
-$scope.chartFormat = function () {
-    if (displayMode == true)
-        displayMode = false;
-    else
-        displayMode = true;
-    setUpChart();
-};
+// Real-time listener (Getting real-time data)
+db.collection('Response').where("SessionID", "==", sessionID).onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+        if (change.type == 'added') {
+            renderResponse(change.doc);
+        } else if (change.type == 'removed') {
+            let li = studentList.querySelector('[data-id=' + change.doc.id + ']');
+            studentList.removeChild(li);
+        }
+    })
+})
+function renderResponse(doc) {
+    if (doc.data().Answer == "Yes") {
+        Yes += 1;
+    }
+    else if (doc.data().Answer == "No") {
+        No += 1;
+    }
+    else if (doc.data().Answer == "Unsure") {
+        Unsure += 1;
+    }
+    setInterval(drawChart, 2000);
+}

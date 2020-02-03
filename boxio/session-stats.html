@@ -4,68 +4,37 @@
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-    <body>
+<body>
+    <h1 id="header"></h1>
+    <div class="content">
 
-        <h1><a id="sessionId">Stats</a></h1>
-        <div class="content">
+        <div id="piechart"></div>
 
+        <script>
+            // Web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyDEQ5uWfzItrrAf9z6KwZM3YDv5UUgOt0s",
+                authDomain: "portfolio-2-boxio.firebaseapp.com",
+                databaseURL: "https://portfolio-2-boxio.firebaseio.com",
+                projectId: "portfolio-2-boxio",
+                storageBucket: "portfolio-2-boxio.appspot.com",
+                messagingSenderId: "186874167723",
+                appId: "1:186874167723:web:8af804c5e634f83b8692ee",
+                measurementId: "G-HPM59MD6Q7"
+            };
 
-
-
-
-            <script>
-                // Web app's Firebase configuration
-                var firebaseConfig = {
-                    apiKey: "AIzaSyDEQ5uWfzItrrAf9z6KwZM3YDv5UUgOt0s",
-                    authDomain: "portfolio-2-boxio.firebaseapp.com",
-                    databaseURL: "https://portfolio-2-boxio.firebaseio.com",
-                    projectId: "portfolio-2-boxio",
-                    storageBucket: "portfolio-2-boxio.appspot.com",
-                    messagingSenderId: "186874167723",
-                    appId: "1:186874167723:web:8af804c5e634f83b8692ee",
-                    measurementId: "G-HPM59MD6Q7"
-                };
-
-                // Initialize Firebase
-                firebase.initializeApp(firebaseConfig);
-                const db = firebase.firestore();
-            </script>
-            <script src="session.js"></script>
-
-            <div class="container" style="padding-top: 100px; padding-bottom: 50px">
-
-                <button data-ng-model="displayType" style="display: block; margin: 0 auto"
-                        data-ng-click="displayType=displayType ? false : true;
-        chartFormat()"
-                        class="btn btn-default btn-md" type="button">
-                    <i class="material-
-        icons">3d_rotation</i>
-                </button>
-
-                <div data-ng-if="error" class="alert alert-danger">
-                    <span data-ng-if="errorMessage" class="glyphicon glyphicon-remove">
-                    </span><strong> {{errorMessage}}</strong>
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+        </script>
+        <script src="js/session-stats.js"></script>
 
 
-                </div>
-
-                <div id="pieChart" style="display: block; margin: 0
-auto; width: 100%; height: 500px"></div>
-
-            </div>
+    </div>
 
 
-
-
-
-        </div>
-
-
-    </body>
+</body>
 </html>
