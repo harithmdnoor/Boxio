@@ -84,8 +84,8 @@ input[type="password"]:valid ~ label {
     transform: translate(5px, -35px) scale(0.6);
   }
 
-  form button {
-    margin-top: 0px;
+  form .enterbtn {
+    margin-top: 5px;
     background-color: white;
     border: 1px solid #000;
     line-height: 0;
@@ -94,19 +94,20 @@ input[type="password"]:valid ~ label {
     box-sizing: border-box;
     padding: 20px 15px;
     border-radius: 60px;
-
+    color: black;
     font-weight: 100;
     letter-spacing: 0.01em;
     position: relative;
     z-index: 1;
+    box-shadow: none;
   }
 
-  form button:hover, form button:focus {
+  form .enterbtn:hover, form .enterbtn:focus {
     color: white;
     background-color: #7B96B4;
-    border: 1px solid #7B96B4 ;
+    border: 1px solid #7B96B4;
   }
-  
+
   select {
     cursor: pointer;
     position : relative;
@@ -139,7 +140,7 @@ input[type="password"]:valid ~ label {
   }
   input[type=number]{
     position : relative;
-    max-width:  20em;
+    max-width:  19em;
     margin: 20px auto;
     width: 100%;
     background: #CDE3F1;
