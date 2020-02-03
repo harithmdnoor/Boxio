@@ -5,20 +5,30 @@
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
     <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/list-style.css"/>
 
     <link rel="icon" href="pictures/boxioicon.png" type="image/png" sizes="16x16">
-    <title>Sessions</title>
+    <title>Session Activity</title>
     
 </head>
 <body>
 
-    <h1>Sessions<br /></h1>
-    <div class="content">
+    <h1>Session Activity<br /></h1>
+    <div>
         <form id="add-response">
-            Session Name:<input type="text" id="newSession"><br>
-            <input type="button" id="addSession" value="Add Session" onclick="createSession()">
+          <div class="content">
+            <a>New Session Name:</a><br/>
+            <input type="text" id="newSession"><br/>
+              <input class="button" type="button" id="addSession" value="Add Session &#8594;" onclick="createSession()">
             
-            <ul id="session-list"></ul>
+
+            <!-- <input type="button" id="addSession" value="Add Session" onclick="createSession()"> -->
+          </div>
+            <!-- Session Name:<input type="text" id="newSession"><br>
+            <input type="button" id="addSession" value="Add Session" onclick="createSession()">
+             -->
+              <ul id="session-list"></ul>
+          
         </form>
         
         <form >
