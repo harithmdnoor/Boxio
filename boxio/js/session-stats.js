@@ -9,14 +9,23 @@ var No = 0;
 var Unsure = 0;
 function drawChart() {
     var data = google.visualization.arrayToDataTable([
-        ['Task', 'Hours per Day'],
+        ['Reponse', 'Response'],
         ['Yes', Yes],
         ['No', No],
-        ['Unsure', Unsure],
+        ['Unsure', Unsure]
     ]);
 
     // Optional; add a title and set the width and height of the chart
-    var options = { 'title': 'Session Statistics', 'width': 550, 'height': 400 };
+    var options = {
+        'title': 'Session Statistics',
+        'width': 550,
+        'height': 400,
+        slices: {
+            0: { color: '#57FF02' },
+            1: { color: '#FF1F00' },
+            2: { color: '#FFC102' }
+        }
+    };
 
     // Display the chart inside the <div> element with id="piechart"
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
