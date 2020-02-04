@@ -5,27 +5,32 @@
     <meta charset="utf-8" />
     <meta name="author" content="Boxio" />
     <meta name="description" content="blank" />
-    <title>Student</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/adminadd.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+    <link rel="icon" href="pictures/boxioicon.png" type="image/png" sizes="16x16">
+    <title>Add Teacher/Student</title>
 </head>
 <body>
-    <h1>Admin Add Page</h1>
+    <h1>Add Student/Teacher</h1>
 
     <div class="content">
-
+        
         <h3>Add Teacher</h3>
         <form name="teacherForm" action="/app.js" onsubmit="return validateForm()" method="post">
             Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="teacherName"> <br />
-            Password:&nbsp;&nbsp;&nbsp;<input type="text" id="teacherPass"> <br />
+            Password:&nbsp;&nbsp;&nbsp;<input type="password" id="teacherPass"> <br />
             Admin:&nbsp;&nbsp;&nbsp;&nbsp;<select id="isAdmin">
-                <option value="true">true</option>
-                <option value="false" selected>false</option>
+                <option value="true">True</option>
+                <option value="false" selected>False</option>
             </select> <br />
             <button id="teacherbtn" type="button" class="enterbtn" onclick="addteacher()">Submit</button>
         </form>
+    </div>
+<div class="content">
         <h3>Add Student</h3>
         <form name="studentForm" action="/app.js" onsubmit="return validateForm()" method="post">
             Name: &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" id="studentName"> <br />

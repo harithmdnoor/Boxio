@@ -8,11 +8,13 @@
     width: 49%;
     height: 200px;
     float: left;
+    transition: all 0.4s ease 0s;
 }
 
 .teachbtn:hover {
    background-color: #8FAC9A;
     color:white;
+    transition: all 0.4s ease 0s;
 }
 
 .adminbtn {
@@ -24,6 +26,7 @@
     float: right;
     width: 49%;
     height: 200px;
+    transition: all 0.4s ease 0s;
 
     
 }
@@ -31,6 +34,7 @@
 .adminbtn:hover {
    background-color: #B38F8F;
     color:white;
+    transition: all 0.4s ease 0s;
 }
 
 div{
@@ -60,6 +64,7 @@ div{
     .teachbtn:hover {
        background-color: #8FAC9A;
         color:white;
+        
     }
     
     .adminbtn {

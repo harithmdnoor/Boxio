@@ -41,7 +41,7 @@ img{
 
  
  
-  form button {
+  form .enterbtn {
     margin-top: 35px;
     background-color: white;
     border: 1px solid #000;
@@ -51,14 +51,15 @@ img{
     box-sizing: border-box;
     padding: 20px 15px;
     border-radius: 60px;
-
+    color: black;
     font-weight: 100;
     letter-spacing: 0.01em;
     position: relative;
     z-index: 1;
+    box-shadow: none;
   }
 
-  form button:hover, form button:focus {
+  form .enterbtn:hover, form .enterbtn:focus {
     color: white;
     background-color: #7B96B4;
     border: none;
