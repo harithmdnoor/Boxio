@@ -25,6 +25,8 @@
             <input type="button" class="button3" name="RThree" value="Unsure">
         </form>
     </div>
+<div>        <button id="btn" type="button" class="btn" onclick="backlogin()">Logout</button>
+</div>
 
     <script>
         // Web app's Firebase configuration
@@ -55,5 +57,8 @@
         document.getElementById("header").innerHTML = localStorage.getItem("sessionID");
     </script>
     <script src="js/response.js"></script>
+    <script>    function backlogin() {
+        window.location.href = 'index.html';
+    }</script>
 </body>
 </html>
