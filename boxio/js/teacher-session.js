@@ -66,10 +66,26 @@ function createSession(){
                 TimeCreated: dateTime.toString()
 
             })
-            setTimeout(function () {
-                window.alert("Added Successfully");
-                location.reload();
-            }, 1000);
+            db.collection('Students').get().then(snapshot => {
+                data = snapshot.docs;
+    
+                data.forEach(doc => {
+                    var sessionname = '';
+                    const guide = doc.data();
+                    sessionName = guide.Name;
+                    if (SessionName.toString() == sessionname.toString()) {
+                        window.alert("Added Successfully");
+                        location.reload();
+                    }
+                    else {
+                        counter += 1;
+                        if (counter == data.length) {
+                            window.alert("Failed to add");
+                            location.reload();
+                        }
+                    }
+                })
+            });
     }
     else {
         window.alert("Failed to add");

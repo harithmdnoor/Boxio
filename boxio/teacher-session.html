@@ -11,7 +11,7 @@
     
 </head>
 <body>
-
+<div><button onclick="Goback()">Back</button></div>
     <h1>Sessions<br /></h1>
     <div class="content">
         <form id="add-response">
@@ -44,5 +44,8 @@
   const db = firebase.firestore();
     </script>
     <script src="js/teacher-session.js"></script>
+    <script>function Goback(){
+    window.history.back()}
+    </script>
 </body>
 </html>

@@ -40,6 +40,7 @@ function verify() {
         counter += 1;
     })
     if (check == false) {
+        alert("Wrong username or Password");
         window.location.href = 'index.html';
     }
     /*

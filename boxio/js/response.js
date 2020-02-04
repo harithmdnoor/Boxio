@@ -79,7 +79,7 @@ form.addEventListener('click', (e) => {
                 TimeCreated: dateTime.toString()
 
             })        
-            alert("Successfully submitted reponse");   
+            alert("Successfully submitted response");   
 
     }
   }) 
