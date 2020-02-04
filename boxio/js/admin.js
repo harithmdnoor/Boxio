@@ -4,8 +4,9 @@ function addteacher() {
     var nem = document.getElementById('teacherName').value;
     var pas = document.getElementById('teacherPass').value
     var adm = document.getElementById('isAdmin');
-    var stradm = adm.options[adm.selectedIndex].text;
+    var stradm = adm[adm.selectedIndex].value;
     var admin = false;
+    
     if (nem != "" && pas != "" && stradm != "") {
         if (stradm == "true") {
             admin = true;
