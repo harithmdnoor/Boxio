@@ -1,0 +1,85 @@
+
+button{
+    border: none;
+    background-color:#fff;
+    cursor:pointer;
+    font-size: 35px;
+    border-radius: 10px;
+    width: 49%;
+    height: 150px;
+    margin: 10px 0px;
+    padding: 0px 10px;
+    transition: all 0.4s ease 0s;
+}
+
+button:hover{
+    background-color: #fff;
+    color: #fff;
+    transition: all 0.4s ease 0s;
+}
+.addbtn {
+    background-color:#B7D3C4;
+    float: left;
+}
+
+.addbtn:hover {
+   background-color: #8FAC9A;
+}
+
+.deletestudentbtn {
+    background-color: #D9C1D7;
+    float: right;
+    
+}
+
+.deletestudentbtn:hover {
+   background-color: #B38F8F;
+}
+
+.btn {
+    background-color:#E4CCA0;
+    float: left;
+}
+
+.btn:hover {
+   background-color: #C49A82;
+}
+
+.deleteteacherbtn {
+    background-color: #D9C1D7;
+    float: right;
+}
+
+.deleteteacherbtn:hover {
+   background-color: #B38F8F;
+}
+
+
+div{
+    padding: 0px 200px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media (min-width: 320px) and (max-width: 480px) {
+   
+    div{
+        padding: 0px 10px;
+        margin-top: 20%;
+    }
+    button{
+        font-size: 24px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 770px) {
+  
+    div{
+        padding: 0px 10px;
+        margin-top: 20%;
+    }
+    button{
+        font-size: 28px;
+    }
+    
+  }
+ 
