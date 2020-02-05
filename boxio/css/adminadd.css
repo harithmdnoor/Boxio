@@ -18,7 +18,7 @@ input[type="text"]:focus {
     outline: none;
     background:#7B96B4 ;
     color: white;
-    border: none;
+    border: 1px solid #7B96B4;
 
   }
 input[type="text"]:focus ~ label {
@@ -65,7 +65,7 @@ input[type="password"]:focus {
     background: #7B96B4;
     color: white;
     margin-top: 30px;
-    border: none;
+    border: 1px solid #7B96B4;
   }
 input[type="password"]:valid {
     margin-top: 30px;
